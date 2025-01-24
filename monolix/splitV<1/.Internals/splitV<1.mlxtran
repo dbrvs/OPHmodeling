@@ -1,0 +1,69 @@
+<DATAFILE>
+
+[FILEINFO]
+file='../../../data/sep2023-update/wideout-pre1yr.csv'
+delimiter = comma
+header = {EMPTY, short_id, agemo_at_ART, f_m, ARTregimen, time_ART_mo, log10VL, cens_vl, cd4count, log10int, cens_intact, log10def, log10ratio}
+
+[CONTENT]
+short_id = {use=identifier}
+agemo_at_ART = {use=covariate, type=continuous}
+f_m = {use=covariate, type=categorical}
+ARTregimen = {use=covariate, type=categorical}
+time_ART_mo = {use=time}
+log10VL = {use=observation, name=log10VL, type=continuous}
+cens_vl = {use=censored}
+
+<MODEL>
+
+[COVARIATE]
+input = {agemo_at_ART, ARTregimen, f_m}
+
+ARTregimen = {type=categorical, categories={'0.0', '1.0', '2.0', '3.0'}}
+f_m = {type=categorical, categories={'0.0', '1.0'}}
+
+[INDIVIDUAL]
+input = {V1_0_pop, omega_V1_0, tchg_pop, omega_tchg, thV1_pop, omega_thV1, thV2_pop, omega_thV2}
+
+DEFINITION:
+V1_0 = {distribution=logNormal, typical=V1_0_pop, sd=omega_V1_0}
+tchg = {distribution=logNormal, typical=tchg_pop, sd=omega_tchg}
+thV1 = {distribution=logNormal, typical=thV1_pop, sd=omega_thV1}
+thV2 = {distribution=logNormal, typical=thV2_pop, sd=omega_thV2}
+
+[LONGITUDINAL]
+input = {a}
+
+file = '../../model_V2-tchg.txt'
+
+DEFINITION:
+log10VL = {distribution=normal, prediction=lV, errorModel=constant(a)}
+
+<FIT>
+data = log10VL
+model = log10VL
+
+<PARAMETER>
+V1_0_pop = {value=100000, method=MLE}
+a = {value=1, method=MLE}
+omega_V1_0 = {value=1, method=MLE}
+omega_tchg = {value=1, method=MLE}
+omega_thV1 = {value=1, method=MLE}
+omega_thV2 = {value=1, method=MLE}
+tchg_pop = {value=2, method=MLE}
+thV1_pop = {value=1, method=MLE}
+thV2_pop = {value=0.1, method=MLE}
+
+<MONOLIX>
+
+[TASKS]
+populationParameters()
+individualParameters(method = {conditionalMean, conditionalMode })
+fim(method = StochasticApproximation)
+logLikelihood(method = ImportanceSampling)
+plotResult(method = {indfits, parameterdistribution, covariancemodeldiagnosis, covariatemodeldiagnosis, obspred, vpc, residualsscatter, residualsdistribution, randomeffects, saemresults })
+
+[SETTINGS]
+GLOBAL:
+exportpath = '../'
+

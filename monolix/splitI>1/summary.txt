@@ -1,0 +1,106 @@
+********************************************************************************
+*                         splitI>1.mlxtran                                     *
+*                         October 18, 2023 at 13:32:04                         *
+*                         Monolix version : 2021R1                             *
+********************************************************************************
+
+
+ESTIMATION OF THE POPULATION PARAMETERS ________________________________________
+
+Fixed Effects ----------------------------     se_sa    rse(%)
+V1_0_pop   :                          23.5      16.5      70.5
+thV1_pop   :                         0.031    0.0178      57.6
+
+Standard Deviation of the Random Effects -
+omega_V1_0 :                         0.874     0.546      62.5
+omega_thV1 :                        0.0109    0.0162       149
+
+Error Model Parameters -------------------
+a          :                         0.664     0.131      19.7
+
+Elapsed time (seconds):      3.8
+CPU time     (seconds):        8
+Exploratory phase iterations:      370 (Autostop)
+Smoothing phase iterations:         86 (Autostop)
+
+ _______________________________________________________________________________
+
+
+
+ESTIMATION OF THE INDIVIDUAL PARAMETERS ________________________________________
+
+
+Estimation of the individual parameters by Conditional Distribution ------------
+             min        Q1    median        Q3       max
+V1_0 :      8.75      17.4      28.9      35.2      42.6
+thV1 :    0.0218    0.0291    0.0309    0.0329    0.0395
+
+Elapsed time (seconds):     0.48
+CPU time     (seconds):        1
+Iterations:       63 (Autostop)
+
+ -------------------------------------------------------------------------------
+
+
+Estimation of the individual parameters by Conditional Mode --------------------
+             min        Q1    median        Q3       max
+V1_0 :       8.8      17.6      27.6      33.5      41.3
+thV1 :     0.022    0.0295    0.0307    0.0331    0.0369
+
+Elapsed time (seconds):    0.013
+CPU time     (seconds):        0
+
+ -------------------------------------------------------------------------------
+
+ _______________________________________________________________________________
+
+
+
+ESTIMATION OF THE FISHER INFORMATION MATRIX ____________________________________
+
+
+Estimation of the Fisher information matrix by Stochastic Approximation --------
+
+Correlation Matrix :
+  V1_0_pop         1
+  thV1_pop   0.88216         1
+omega_V1_0  -0.66518  -0.75211         1
+omega_thV1   0.73585   0.83255  -0.81198         1
+         a   0.28913   0.46168  -0.43399   0.39107         1
+
+                               min       max   max/min
+Eigen values           :     0.083       3.6        43
+
+Elapsed time (seconds):      0.2
+CPU time     (seconds):     0.43
+Iterations:       52 (Autostop)
+
+ -------------------------------------------------------------------------------
+
+ _______________________________________________________________________________
+
+
+
+ESTIMATION OF THE LOG-LIKELIHOOD _______________________________________________
+
+                                                            (is)
+-2 x log-likelihood                       (OFV) :          95.31
+Akaike Information Criteria               (AIC) :         105.31
+Corrected Bayesian Information Criteria  (BICc) :         113.46
+Bayesian Information Criteria             (BIC) :         111.20
+
+Elapsed time                          (seconds) :           4.04
+CPU time                              (seconds) :           6.00
+MonteCarlo size (is):    10000 (Fixed number of iterations)
+
+
+[Importance Sampling] Standard error        : 0.028
+                      Sampling distribution : T-distribution with 5 degrees of freedom
+
+ _______________________________________________________________________________
+
+DATASET INFORMATION
+Number of individuals: 24
+Number of observations (log10int): 51
+Number of doses: 0
+

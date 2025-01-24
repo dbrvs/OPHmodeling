@@ -1,0 +1,13 @@
+
+[LONGITUDINAL]
+input={V1_0,thV1}
+
+EQUATION:
+odeType=stiff
+
+V=V1_0*exp(-thV1*t) 
+
+lV=log10(V)
+
+OUTPUT:
+output={lV}

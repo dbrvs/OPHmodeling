@@ -1,0 +1,21 @@
+
+[LONGITUDINAL]
+input={bS,dA,dL,phi,xi,A0,Vt}
+
+Vt = {use=regressor}
+
+EQUATION:
+odeType=stiff
+
+A_0=A0
+L_0=A0*phi/dL
+
+;productive cells 
+ddt_A = bS*Vt/1000 - dA*A - phi*A
+ddt_L = phi*A - dL*L
+
+Itot = log10(A+L)
+
+OUTPUT:
+output={Itot}
+

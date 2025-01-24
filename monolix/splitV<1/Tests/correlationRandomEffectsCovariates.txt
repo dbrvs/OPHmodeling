@@ -1,0 +1,13 @@
+eta,covariate,statistics,p-value,test
+eta_V1_0,ARTregimen,1.49337,0.22743,Anova
+eta_V1_0,f_m,0.00153434,0.968901,Anova
+eta_V1_0,agemo_at_ART,-0.575535,0.567365,Pearson
+eta_thV1,ARTregimen,0.00377183,0.999676,Anova
+eta_thV1,f_m,0.334347,0.56556,Anova
+eta_thV1,agemo_at_ART,-0.350955,0.727013,Pearson
+eta_thV2,ARTregimen,5.88442,0.0015751,Anova
+eta_thV2,f_m,0.128525,0.72139,Anova
+eta_thV2,agemo_at_ART,0.783323,0.436924,Pearson
+eta_tchg,ARTregimen,0.269147,0.847338,Anova
+eta_tchg,f_m,2.14925,0.148548,Anova
+eta_tchg,agemo_at_ART,0.228196,0.820372,Pearson

@@ -1,0 +1,7 @@
+eta,covariate,statistics,p-value,test
+eta_V1_0,ARTregimen,2.7021,0.0566811,Anova
+eta_V1_0,f_m,0.354157,0.554624,Anova
+eta_V1_0,agemo_at_ART,-0.893739,0.376016,Pearson
+eta_thV1,ARTregimen,3.84273,0.0156383,Anova
+eta_thV1,f_m,0.0759766,0.784034,Anova
+eta_thV1,agemo_at_ART,1.67951,0.09969,Pearson
